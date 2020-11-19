@@ -23,7 +23,7 @@
 |title              |string |null: false|
 |explanation        |text   |null: false|
 |category_id        |integer|null: false|
-|status             |text   |null: false|
+|status             |integer|null: false|
 |shipping_charges_id|integer|null: false|
 |shipment_source_id |integer|null: false|
 |days_id            |integer|null: false|
@@ -42,8 +42,8 @@
 |prefectures_id |integer|null: false      |
 |municipality   |string |null: false      |
 |address        |string |null: false      |
-|building_name  |string |null: false      |
-|phone_number   |string |                 |
+|building_name  |string |                 |
+|phone_number   |string |null: false      |
 |purchase_record|integer|foreign_key: true|
 
 
@@ -53,10 +53,10 @@
 
 ## purchase_record テーブル
 
-|Column |Type   |Options   |
-|-------|-------|----------|
-|user   |string |references|
-|item   |integer|references|
+|Column |Type      |Options|
+|-------|----------|-------|
+|user   |references|       |
+|item   |references|       |
 
 
 ### Association
