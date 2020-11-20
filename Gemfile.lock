@@ -280,12 +280,12 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 6.0.0)
-
+<<<<<<< HEAD
   rails_12factor
-
+=======
   rspec-rails (~> 4.0.0)
   rubocop
-  fa26d4cabff0c966226e37e601c49183990e0ed6
+>>>>>>> fa26d4cabff0c966226e37e601c49183990e0ed6
   sass-rails (~> 5)
   selenium-webdriver
   spring
