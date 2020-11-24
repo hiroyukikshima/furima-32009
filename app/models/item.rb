@@ -9,15 +9,19 @@ class Item < ApplicationRecord
   belongs_to :day
 
   with_options presence: true do
-    validates :title
     validates :explanation
-    validates :price
     with_options numericality: { other_than: 1 } do
       validates :category_id
       validates :status_id
       validates :shipping_charge_id
       validates :shipment_source_id
       validates :days_id
+    end
+    with_options length: { maximum: 40 } do
+      validates :title
+    end
+    with_options numericality: { only_integer: true, greater_than: 299, less_than: 10000000 } do
+      validates :price
     end
   end
 end
