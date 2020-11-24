@@ -20,7 +20,7 @@ class Item < ApplicationRecord
     with_options length: { maximum: 40 } do
       validates :title
     end
-    with_options numericality: { only_integer: true, greater_than: 299, less_than: 10000000 } do
+    with_options numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 } do
       validates :price
     end
   end
