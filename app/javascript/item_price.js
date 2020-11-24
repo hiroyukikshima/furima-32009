@@ -7,9 +7,8 @@ window.addEventListener('load', () => {
     const TaxPrice = inputValue * Tax;
     const priceAfterTax = Math.floor(TaxPrice);
     addTaxDom.innerHTML = priceAfterTax;
-    const priceContentDom = document.getElementById("price-content");
-    const salesProfit = inputValue - priceAfterTax;
-    const salesAfterProfit = Math.floor(salesProfit);
-    priceContentDom.innerHTML = salesAfterProfit;
+    const profitDom = document.getElementById("profit");
+    const salesProfit = priceAfterTax - inputValue;
+    profitDom.innerHTML = salesProfit;
   })
 });
