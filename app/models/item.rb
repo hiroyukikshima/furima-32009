@@ -15,7 +15,7 @@ class Item < ApplicationRecord
       validates :status_id
       validates :shipping_charge_id
       validates :shipment_source_id
-      validates :days_id
+      validates :day_id
     end
     with_options length: { maximum: 40 } do
       validates :title
