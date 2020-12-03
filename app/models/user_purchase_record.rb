@@ -8,7 +8,9 @@ class UserPurchaseRecord
     validates :municipality
     validates :address
     validates :phone_number, format: { with: /\A\d{11}\z/ }
-    validates :token, presence: true
+    validates :token
+    validates :item_id
+    validates :user_id
   end
 
   def save

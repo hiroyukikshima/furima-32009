@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     if @user_purchase_record.valid?
       pay_item
       @user_purchase_record.save
-      redirect_to item_path(@item)
+      redirect_to root_path
     else
       render 'orders/index'
     end
