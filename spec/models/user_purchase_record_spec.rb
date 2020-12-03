@@ -46,6 +46,16 @@ RSpec.describe UserPurchaseRecord, type: :model do
         @user_purchase_record.valid?
         expect(@user_purchase_record.errors.full_messages).to include("Phone number can't be blank")
       end
+      it 'phone_numberが12桁以上だと購入できない' do
+        @user_purchase_record.phone_number = 000000000000
+        @user_purchase_record.valid?
+        expect(@user_purchase_record.errors.full_messages).to include("Phone number is invalid")
+      end
+      it 'phone_numberにハイフンが入っていると購入できない' do
+        @user_purchase_record.phone_number = 000-0000-0000
+        @user_purchase_record.valid?
+        expect(@user_purchase_record.errors.full_messages).to include("Phone number is invalid")
+      end
       it 'tokenが空では購入できないこと' do
         @user_purchase_record.token = nil
         @user_purchase_record.valid?

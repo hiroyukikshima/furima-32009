@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
       @user_purchase_record.save
       redirect_to root_path
     else
-      render 'orders/index'
+      render 'index'
     end
   end
 
