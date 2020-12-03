@@ -36,15 +36,15 @@
 
 ## street_address テーブル
 
-|Column         |Type   |Options          |
-|---------------|-------|-----------------|
-|postal_code    |string |null: false      |
-|prefectures_id |integer|null: false      |
-|municipality   |string |null: false      |
-|address        |string |null: false      |
-|building_name  |string |                 |
-|phone_number   |string |null: false      |
-|purchase_record|integer|foreign_key: true|
+|Column            |Type      |Options          |
+|------------------|----------|-----------------|
+|postal_code       |string    |null: false      |
+|prefecture        |integer   |null: false      |
+|municipality      |string    |null: false      |
+|address           |string    |null: false      |
+|building_name     |string    |                 |
+|phone_number      |string    |null: false      |
+|purchase_record_id|references|foreign_key: true|
 
 
 ### Association
@@ -53,10 +53,10 @@
 
 ## purchase_record テーブル
 
-|Column |Type      |Options|
-|-------|----------|-------|
-|user   |references|       |
-|item   |references|       |
+|Column |Type      |Options          |
+|-------|----------|-----------------|
+|user   |references|foreign_key: true|
+|item   |references|foreign_key: true|
 
 
 ### Association
