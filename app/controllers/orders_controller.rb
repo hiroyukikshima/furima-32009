@@ -43,6 +43,6 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path if @item.purchase_record
+    redirect_to root_path unless @item.purchase_record == nil
   end
 end
