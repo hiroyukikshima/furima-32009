@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_action :move_to_index, only: :index
 
   def index
-    return redirect_to root_path if current_user.id == @item.user_id
+    return redirect_to root_path if current_user.id == @item.user_id && @item.purchase_record
 
     @user_purchase_record = UserPurchaseRecord.new
   end
