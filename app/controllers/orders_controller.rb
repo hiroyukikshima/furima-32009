@@ -44,8 +44,6 @@ class OrdersController < ApplicationController
 
   def move_to_index
     # @itemが@purchase_recordと紐づいているかの条件分岐
-    if @item == @purchase_record
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.purchase_record
   end
 end
