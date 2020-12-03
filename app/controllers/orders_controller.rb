@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
     @user_purchase_record = UserPurchaseRecord.new(street_address_params)
     if @user_purchase_record.valid?
       pay_item
+      @user_purchase_record.save
       redirect_to item_path(@item)
     else
       render 'orders/index'
@@ -42,6 +43,9 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path if @item_id == @user_id
+    # @itemが@purchase_recordと紐づいているかの条件分岐
+    if @item == @purchase_record
+      redirect_to root_path
+    end
   end
 end
